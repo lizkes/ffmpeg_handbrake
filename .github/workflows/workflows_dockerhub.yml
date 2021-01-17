@@ -1,9 +1,12 @@
 name: Dockerhub CI
 
 on:
-  push:
-    tags:
-      - '*.*.*'
+  workflow_dispatch:
+      inputs:
+          tag:
+              description: "release tag"
+              required: true
+              default: ""
 
 jobs:
   docker:
@@ -13,14 +16,6 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
-      -
-        name: Docker meta
-        id: docker_meta
-        uses: crazy-max/ghaction-docker-meta@v1
-        with:
-          images:  lizkes/ffmpeg_handbrake  # list of Docker images to use as base name for tags
-          tag-semver: |
-            {{version}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -42,6 +37,5 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
+          tags: ${{ github.event.inputs.tag }}
 

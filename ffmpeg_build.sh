@@ -584,6 +584,64 @@ if build "srt"; then
 fi
 CONFIGURE_OPTIONS+=("--enable-libsrt")
 
+# Build libass start
+if build "fontconfig"; then
+	download "https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.93.tar.xz"
+	execute ./configure --prefix="${WORKSPACE}" --disable-docs --disable-shared --enable-static
+	execute make -j $MJOBS
+	execute make install
+
+	build_done "fontconfig"
+fi
+
+if build "freetype2"; then
+	download "https://download.savannah.gnu.org/releases/freetype/freetype-2.10.4.tar.xz"
+	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
+	execute make -j $MJOBS
+	execute make install
+
+	build_done "freetype2"
+fi
+
+if build "graphite2"; then
+	download "https://github.com/silnrsi/graphite/releases/download/1.3.14/graphite2-1.3.14.tgz"
+	execute cmake -DCMAKE_INSTALL_PREFIX="${WORKSPACE}" -DENABLE_SHARED=off -DBUILD_SHARED_LIBS=OFF -DENABLE_STATIC=ON .
+	execute make -j $MJOBS
+	execute make install
+
+	build_done "graphite2"
+fi
+
+if build "harfbuzz"; then
+	download "https://github.com/harfbuzz/harfbuzz/releases/download/2.7.4/harfbuzz-2.7.4.tar.xz"
+	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
+	execute make -j $MJOBS
+	execute make install
+
+	build_done "harfbuzz"
+fi
+
+if build "fribidi"; then
+	download "https://github.com/fribidi/fribidi/releases/download/v1.0.10/fribidi-1.0.10.tar.xz"
+	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
+	execute make -j $MJOBS
+	execute make install
+
+	build_done "fribidi"
+fi
+
+if build "libass"; then
+	download "https://github.com/libass/libass/releases/download/0.15.0/libass-0.15.0.tar.gz"
+	execute autoreconf -fiv
+	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
+	execute make -j $MJOBS
+	execute make install
+
+	build_done "libass"
+fi
+CONFIGURE_OPTIONS+=("--enable-libass")
+# Build libass end
+
 
 ##
 ## HWaccel library
@@ -634,11 +692,11 @@ download "https://ffmpeg.org/releases/ffmpeg-4.3.1.tar.bz2"
 	--disable-doc \
 	--disable-shared \
 	--enable-gpl \
+	--enable-version3 \
 	--enable-nonfree \
 	--enable-pthreads \
 	--enable-static \
-	--enable-small \
-	--enable-version3 \
+	--disable-ffplay \
 	--extra-cflags="${CFLAGS}" \
 	--extra-ldexeflags="${LDEXEFLAGS}" \
 	--extra-ldflags="${LDFLAGS}" \
