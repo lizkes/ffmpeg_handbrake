@@ -2,11 +2,8 @@ name: Dockerhub CI
 
 on:
   push:
-    branches:
-      - master
     tags:
       - '*.*.*'
-  pull_request:
 
 jobs:
   docker:
