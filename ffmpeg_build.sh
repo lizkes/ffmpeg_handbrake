@@ -221,7 +221,7 @@ mkdir -p "$PACKAGES"
 mkdir -p "$WORKSPACE"
 
 export PATH="${WORKSPACE}/bin:$PATH"
-PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig"
+PKG_CONFIG_PATH="${WORKSPACE}/lib/pkgconfig:/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig"
 PKG_CONFIG_PATH+=":/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib64/pkgconfig"
 export PKG_CONFIG_PATH
 
@@ -248,16 +248,6 @@ fi
 ##
 ## build tools
 ##
-
-if build "pkg-config"; then
-	download "https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz"
-	execute ./configure --silent --prefix="${WORKSPACE}" --with-pc-path="${WORKSPACE}"/lib/pkgconfig --with-internal-glib
-	execute make -j $MJOBS
-	execute make install
-	build_done "pkg-config"
-fi
-
-
 if command_exists "python"; then
 
   if build "lv2"; then
@@ -585,61 +575,61 @@ fi
 CONFIGURE_OPTIONS+=("--enable-libsrt")
 
 # Build libass start
-if build "fontconfig"; then
-	download "https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.93.tar.xz"
-	execute ./configure --prefix="${WORKSPACE}" --disable-docs --disable-shared --enable-static
-	execute make -j $MJOBS
-	execute make install
+# if build "fontconfig"; then
+# 	download "https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.93.tar.xz"
+# 	execute ./configure --prefix="${WORKSPACE}" --disable-docs --disable-shared --enable-static
+# 	execute make -j $MJOBS
+# 	execute make install
 
-	build_done "fontconfig"
-fi
+# 	build_done "fontconfig"
+# fi
 
-if build "freetype2"; then
-	download "https://download.savannah.gnu.org/releases/freetype/freetype-2.10.4.tar.xz"
-	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
-	execute make -j $MJOBS
-	execute make install
+# if build "freetype2"; then
+# 	download "https://download.savannah.gnu.org/releases/freetype/freetype-2.10.4.tar.xz"
+# 	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
+# 	execute make -j $MJOBS
+# 	execute make install
 
-	build_done "freetype2"
-fi
+# 	build_done "freetype2"
+# fi
 
-if build "graphite2"; then
-	download "https://github.com/silnrsi/graphite/releases/download/1.3.14/graphite2-1.3.14.tgz"
-	execute cmake -DCMAKE_INSTALL_PREFIX="${WORKSPACE}" -DENABLE_SHARED=off -DBUILD_SHARED_LIBS=OFF -DENABLE_STATIC=ON .
-	execute make -j $MJOBS
-	execute make install
+# if build "graphite2"; then
+# 	download "https://github.com/silnrsi/graphite/releases/download/1.3.14/graphite2-1.3.14.tgz"
+# 	execute cmake -DCMAKE_INSTALL_PREFIX="${WORKSPACE}" -DENABLE_SHARED=off -DBUILD_SHARED_LIBS=OFF -DENABLE_STATIC=ON .
+# 	execute make -j $MJOBS
+# 	execute make install
 
-	build_done "graphite2"
-fi
+# 	build_done "graphite2"
+# fi
 
-if build "harfbuzz"; then
-	download "https://github.com/harfbuzz/harfbuzz/releases/download/2.7.4/harfbuzz-2.7.4.tar.xz"
-	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
-	execute make -j $MJOBS
-	execute make install
+# if build "harfbuzz"; then
+# 	download "https://github.com/harfbuzz/harfbuzz/releases/download/2.7.4/harfbuzz-2.7.4.tar.xz"
+# 	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
+# 	execute make -j $MJOBS
+# 	execute make install
 
-	build_done "harfbuzz"
-fi
+# 	build_done "harfbuzz"
+# fi
 
-if build "fribidi"; then
-	download "https://github.com/fribidi/fribidi/releases/download/v1.0.10/fribidi-1.0.10.tar.xz"
-	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
-	execute make -j $MJOBS
-	execute make install
+# if build "fribidi"; then
+# 	download "https://github.com/fribidi/fribidi/releases/download/v1.0.10/fribidi-1.0.10.tar.xz"
+# 	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
+# 	execute make -j $MJOBS
+# 	execute make install
 
-	build_done "fribidi"
-fi
+# 	build_done "fribidi"
+# fi
 
-if build "libass"; then
-	download "https://github.com/libass/libass/releases/download/0.15.0/libass-0.15.0.tar.gz"
-	execute autoreconf -fiv
-	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
-	execute make -j $MJOBS
-	execute make install
+# if build "libass"; then
+# 	download "https://github.com/libass/libass/releases/download/0.15.0/libass-0.15.0.tar.gz"
+# 	execute autoreconf -fiv
+# 	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
+# 	execute make -j $MJOBS
+# 	execute make install
 
-	build_done "libass"
-fi
-CONFIGURE_OPTIONS+=("--enable-libass")
+# 	build_done "libass"
+# fi
+# CONFIGURE_OPTIONS+=("--enable-libass")
 # Build libass end
 
 
@@ -695,13 +685,13 @@ download "https://ffmpeg.org/releases/ffmpeg-4.3.1.tar.bz2"
 	--enable-version3 \
 	--enable-nonfree \
 	--enable-pthreads \
+	--enable-libass \
 	--enable-static \
 	--disable-ffplay \
 	--extra-cflags="${CFLAGS}" \
 	--extra-ldexeflags="${LDEXEFLAGS}" \
 	--extra-ldflags="${LDFLAGS}" \
 	--extra-libs="${EXTRALIBS}" \
-	--pkgconfigdir="$WORKSPACE/lib/pkgconfig" \
 	--pkg-config-flags="--static" \
 	--prefix="${WORKSPACE}"
 
