@@ -37,5 +37,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ github.event.inputs.tag }}
-
+          tags: lizkes/ffmpeg_handbrake:${{ github.event.inputs.tag }}
