@@ -13,6 +13,7 @@ RUN git clone https://github.com/HandBrake/HandBrake.git && cd ./HandBrake \
 
 FROM jrottenberg/ffmpeg:4.3.1-ubuntu2004
 COPY --from=builder /usr/local/bin/handbrake /usr/local/bin/
+ENTRYPOINT []
 # RUN apt-get update \
 #     && apt-get install -y libass-dev libmp3lame-dev libvpx-dev libtheora0 libvorbis-dev libx264-dev libjansson-dev libopus-dev libspeex-dev libturbojpeg0-dev libnuma-dev \
 #     && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
