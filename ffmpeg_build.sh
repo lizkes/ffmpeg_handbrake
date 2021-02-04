@@ -182,10 +182,10 @@ download \
   "https://github.com/sekrit-twc/zimg/archive/"
 
 download \
-  "openjpeg-v2.4.0-linux-x86_64.tar.gz" \
+  "v2.4.0.tar.gz" \
   "openjpeg-2.4.0.tar.gz" \
-  "d30fc91dc96d824c01ab73f00d6db0e0" \
-  "https://github.com/uclouvain/openjpeg/releases/download/v2.4.0/"
+  "4d388298335947367e91f1d100468af1" \
+  "https://github.com/uclouvain/openjpeg/archive/"
 
 download \
   "v1.2.0.tar.gz" \
