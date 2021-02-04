@@ -155,7 +155,7 @@ download \
   "v1.9.0.tar.gz" \
   "vpx-1.9.0.tar.gz" \
   "e5fab59896984392124d0bfaffc36e14" \
-  "https://github.com/webmproject/libvpx/archive"
+  "https://github.com/webmproject/libvpx/archive/"
 
 download \
   "rtmpdump-2.3.tgz" \
@@ -318,6 +318,7 @@ make install
 
 echo "*** Building opus ***"
 cd $BUILD_DIR/opus*
+./autogen.sh
 [ $rebuild -eq 1 -a -f Makefile ] && make distclean || true
 [ ! -f config.status ] && ./configure --prefix=$TARGET_DIR --disable-shared
 make
