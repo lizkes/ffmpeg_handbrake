@@ -103,58 +103,58 @@ download \
   "https://github.com/madler/zlib/archive/"
 
 download \
-  "x264-stable.tar.gz" \
+  "x264-stable.tar.bz2" \
   "" \
   "nil" \
   "https://code.videolan.org/videolan/x264/-/archive/stable/"
 
 download \
-  "x265_2.7.tar.gz" \
+  "x265_3.4.tar.gz" \
   "" \
-  "b0d7d20da2a418fa4f53a559946ea079" \
+  "e37b91c1c114f8815a3f46f039fe79b5" \
   "http://download.openpkg.org/components/cache/x265/"
 
 download \
-  "v0.1.6.tar.gz" \
+  "v2.0.1.tar.gz" \
   "fdk-aac.tar.gz" \
-  "223d5f579d29fb0d019a775da4e0e061" \
+  "5b85f858ee416a058574a1028a3e1b85" \
   "https://github.com/mstorsjo/fdk-aac/archive"
 
 # libass dependency
 download \
-  "harfbuzz-1.4.6.tar.bz2" \
+  "harfbuzz-2.6.7.tar.xz" \
   "" \
-  "e246c08a3bac98e31e731b2a1bf97edf" \
+  "3b884586a09328c5fae76d8c200b0e1c" \
   "https://www.freedesktop.org/software/harfbuzz/release/"
 
 download \
-  "fribidi-1.0.2.tar.bz2" \
+  "fribidi-1.0.10.tar.xz" \
   "" \
-  "bd2eb2f3a01ba11a541153f505005a7b" \
-  "https://github.com/fribidi/fribidi/releases/download/v1.0.2/"
+  "97c87da9930e8e70fbfc8e2bcd031554" \
+  "https://github.com/fribidi/fribidi/releases/download/v1.0.10/"
 
 download \
-  "0.13.6.tar.gz" \
-  "libass-0.13.6.tar.gz" \
-  "nil" \
-  "https://github.com/libass/libass/archive/"
-
-download \
-  "lame-3.99.5.tar.gz" \
+  "libass-0.15.0.tar.xz" \
   "" \
-  "84835b313d4a8b68f5349816d33e07ce" \
-  "http://downloads.sourceforge.net/project/lame/lame/3.99"
-
+  "dab492ded0ecc83dd7cb65522801cffa" \
+  "https://github.com/libass/libass/releases/download/0.15.0/"
+  
 download \
-  "opus-1.1.2.tar.gz" \
+  "lame-3.100.tar.gz" \
   "" \
-  "1f08a661bc72930187893a07f3741a91" \
-  "https://github.com/xiph/opus/releases/download/v1.1.2"
+  "83e260acbe4389b54fe08e0bdbf7cddb" \
+  "https://udomain.dl.sourceforge.net/project/lame/lame/3.100/"
 
 download \
-  "v1.6.1.tar.gz" \
-  "vpx-1.6.1.tar.gz" \
-  "b0925c8266e2859311860db5d76d1671" \
+  "v1.3.1.tar.gz" \
+  "opus-1.3.1.tar.gz" \
+  "b27f67923ffcbc8efb4ce7f29cbe3faf" \
+  "https://github.com/xiph/opus/archive/"
+
+download \
+  "v1.9.0.tar.gz" \
+  "vpx-1.9.0.tar.gz" \
+  "e5fab59896984392124d0bfaffc36e14" \
   "https://github.com/webmproject/libvpx/archive"
 
 download \
@@ -182,39 +182,39 @@ download \
   "https://github.com/sekrit-twc/zimg/archive/"
 
 download \
-  "v2.1.2.tar.gz" \
-  "openjpeg-2.1.2.tar.gz" \
-  "40a7bfdcc66280b3c1402a0eb1a27624" \
-  "https://github.com/uclouvain/openjpeg/archive/"
+  "openjpeg-v2.4.0-linux-x86_64.tar.gz" \
+  "openjpeg-2.4.0.tar.gz" \
+  "d30fc91dc96d824c01ab73f00d6db0e0" \
+  "https://github.com/uclouvain/openjpeg/releases/download/v2.4.0/"
 
 download \
-  "v0.6.1.tar.gz" \
-  "libwebp-0.6.1.tar.gz" \
-  "1c3099cd2656d0d80d3550ee29fc0f28" \
+  "v1.2.0.tar.gz" \
+  "libwebp-1.2.0.tar.gz" \
+  "d0df15b4235d024652841f2f926f72b4" \
   "https://github.com/webmproject/libwebp/archive/"
 
 download \
-  "v1.3.6.tar.gz" \
-  "vorbis-1.3.6.tar.gz" \
-  "03e967efb961f65a313459c5d0f4cbfb" \
-  "https://github.com/xiph/vorbis/archive/"
+  "libvorbis-1.3.7.tar.xz" \
+  "" \
+  "50902641d358135f06a8392e61c9ac77" \
+  "https://github.com/xiph/vorbis/releases/download/v1.3.7/"
 
 download \
-  "v1.3.3.tar.gz" \
-  "ogg-1.3.3.tar.gz" \
-  "b8da1fe5ed84964834d40855ba7b93c2" \
-  "https://github.com/xiph/ogg/archive/"
+  "libogg-1.3.4.tar.xz" \
+  "" \
+  "eadef24aad6e3e8379ba0d14971fd64a" \
+  "https://github.com/xiph/ogg/releases/download/v1.3.4/"
 
 download \
   "Speex-1.2.0.tar.gz" \
-  "Speex-1.2.0.tar.gz" \
+  "" \
   "4bec86331abef56129f9d1c994823f03" \
   "https://github.com/xiph/speex/archive/"
 
 download \
-  "n4.0.tar.gz" \
-  "ffmpeg4.0.tar.gz" \
-  "4749a5e56f31e7ccebd3f9924972220f" \
+  "n4.3.1.tar.gz" \
+  "ffmpeg4.3.1.tar.gz" \
+  "426ca412ca61634a248c787e29507206" \
   "https://github.com/FFmpeg/FFmpeg/archive"
 
 [ $download_only -eq 1 ] && exit 0
