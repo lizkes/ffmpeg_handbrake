@@ -91,9 +91,9 @@ cd $BUILD_DIR
   "https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/"
 
 download \
-  "OpenSSL_1_0_2o.tar.gz" \
+  "OpenSSL_1_1_1i.tar.gz" \
   "" \
-  "5b5c050f83feaa0c784070637fac3af4" \
+  "882525c88bd6bec13bfdd70a656b0951" \
   "https://github.com/openssl/openssl/archive/"
 
 download \
@@ -164,21 +164,21 @@ download \
   "https://rtmpdump.mplayerhq.hu/download/"
 
 download \
-  "soxr-0.1.2-Source.tar.xz" \
+  "soxr-0.1.3-Source.tar.xz" \
   "" \
-  "0866fc4320e26f47152798ac000de1c0" \
+  "3f16f4dcb35b471682d4321eda6f6c08" \
   "https://sourceforge.net/projects/soxr/files/"
 
 download \
-  "release-0.98b.tar.gz" \
-  "vid.stab-release-0.98b.tar.gz" \
-  "299b2f4ccd1b94c274f6d94ed4f1c5b8" \
+  "v1.1.0.tar.gz" \
+  "vid.stab-1.1.0.tar.gz" \
+  "633af54b7e2fd5734265ac7488ac263a" \
   "https://github.com/georgmartius/vid.stab/archive/"
 
 download \
-  "release-2.7.4.tar.gz" \
-  "zimg-release-2.7.4.tar.gz" \
-  "1757dcc11590ef3b5a56c701fd286345" \
+  "release-3.0.1.tar.gz" \
+  "zimg-release-3.0.1.tar.gz" \
+  "b14d551f13819314e9733a400da04121" \
   "https://github.com/sekrit-twc/zimg/archive/"
 
 download \
@@ -459,7 +459,7 @@ if [ "$platform" = "linux" ]; then
     --enable-openssl
 elif [ "$platform" = "darwin" ]; then
   [ ! -f config.status ] && PATH="$BIN_DIR:$PATH" \
-  PKG_CONFIG_PATH="${TARGET_DIR}/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/local/Cellar/openssl/1.0.2o_1/lib/pkgconfig" ./configure \
+  PKG_CONFIG_PATH="${TARGET_DIR}/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/local/Cellar/openssl/1.1.1i_1/lib/pkgconfig" ./configure \
     --cc=/usr/bin/clang \
     --prefix="$TARGET_DIR" \
     --pkg-config-flags="--static" \
