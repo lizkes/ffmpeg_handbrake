@@ -134,11 +134,11 @@ download \
   "https://github.com/fribidi/fribidi/releases/download/v1.0.10/"
 
 download \
-  "libass-0.15.0.tar.xz" \
-  "" \
-  "dab492ded0ecc83dd7cb65522801cffa" \
-  "https://github.com/libass/libass/releases/download/0.15.0/"
-  
+  "0.15.0.tar.gz" \
+  "libass-0.15.0.tar.gz" \
+  "ca0eb2a28037762f1eefee532eccda50" \
+  "https://github.com/libass/libass/archive/"
+
 download \
   "lame-3.100.tar.gz" \
   "" \
