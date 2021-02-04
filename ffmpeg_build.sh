@@ -194,16 +194,16 @@ download \
   "https://github.com/webmproject/libwebp/archive/"
 
 download \
-  "libvorbis-1.3.7.tar.xz" \
-  "" \
-  "50902641d358135f06a8392e61c9ac77" \
-  "https://github.com/xiph/vorbis/releases/download/v1.3.7/"
+  "v1.3.7.tar.gz" \
+  "libvorbis-1.3.7.tar.gz" \
+  "689dc495b22c5f08246c00dab35f1dc7" \
+  "https://github.com/xiph/vorbis/archive/"
 
 download \
-  "libogg-1.3.4.tar.xz" \
-  "" \
-  "eadef24aad6e3e8379ba0d14971fd64a" \
-  "https://github.com/xiph/ogg/releases/download/v1.3.4/"
+  "v1.3.4.tar.gz" \
+  "libogg-1.3.4.tar.gz" \
+  "df1a9a95251a289aa5515b869db4b15f" \
+  "https://github.com/xiph/ogg/archive/"
 
 download \
   "Speex-1.2.0.tar.gz" \
