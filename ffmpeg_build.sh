@@ -91,9 +91,9 @@ cd $BUILD_DIR
   "https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/"
 
 download \
-  "OpenSSL_1_1_1i.tar.gz" \
+  "OpenSSL_1_0_2u.tar.gz" \
   "" \
-  "882525c88bd6bec13bfdd70a656b0951" \
+  "c38577624507dad3a4a1f3d07b84fa59" \
   "https://github.com/openssl/openssl/archive/"
 
 download \
@@ -460,7 +460,7 @@ if [ "$platform" = "linux" ]; then
     --enable-openssl
 elif [ "$platform" = "darwin" ]; then
   [ ! -f config.status ] && PATH="$BIN_DIR:$PATH" \
-  PKG_CONFIG_PATH="${TARGET_DIR}/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/local/Cellar/openssl/1.1.1i_1/lib/pkgconfig" ./configure \
+  PKG_CONFIG_PATH="${TARGET_DIR}/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/local/Cellar/openssl/1.0.2u_1/lib/pkgconfig" ./configure \
     --cc=/usr/bin/clang \
     --prefix="$TARGET_DIR" \
     --pkg-config-flags="--static" \
