@@ -354,7 +354,7 @@ make -j $jval
 make install
 
 echo "*** Building libvidstab ***"
-cd $BUILD_DIR/vid.stab-release-*
+cd $BUILD_DIR/vid.stab-*
 [ $rebuild -eq 1 -a -f Makefile ] && make distclean || true
 if [ "$platform" = "linux" ]; then
   sed -i "s/vidstab SHARED/vidstab STATIC/" ./CMakeLists.txt
