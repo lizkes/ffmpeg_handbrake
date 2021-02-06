@@ -271,10 +271,29 @@ make install
 echo "*** Building x265 ***"
 cd $BUILD_DIR/x265*
 cd build/linux
-[ $rebuild -eq 1 ] && find . -mindepth 1 ! -name 'make-Makefiles.bash' -and ! -name 'multilib.sh' -exec rm -r {} +
-PATH="$BIN_DIR:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$TARGET_DIR" -DENABLE_SHARED:BOOL=OFF -DSTATIC_LINK_CRT:BOOL=ON -DENABLE_CLI:BOOL=OFF -DHIGH_BIT_DEPTH=ON ../../source
+[ $rebuild -eq 1 ] && find . -mindepth 2 ! -name 'make-Makefiles.bash' -and ! -name 'multilib.sh' -exec rm -r {} +
+mkdir -p 10bit 12bit
+cd 12bit
+PATH="$BIN_DIR:$PATH" cmake ../../../source -DEXPORT_C_API=OFF -DENABLE_SHARED=OFF -DSTATIC_LINK_CRT=ON -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DMAIN12=ON
+make -j $jval
+cd ../10bit
+PATH="$BIN_DIR:$PATH" cmake ../../../source -DEXPORT_C_API=OFF -DENABLE_SHARED=OFF -DSTATIC_LINK_CRT=ON -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON
+make -j $jval
+cd ..
+ln -sf 10bit/libx265.a libx265_main10.a
+ln -sf 12bit/libx265.a libx265_main12.a 
+PATH="$BIN_DIR:$PATH" cmake ../../source -DEXTRA_LIB="x265_main10.a;x265_main12.a" -DCMAKE_INSTALL_PREFIX="$TARGET_DIR" -DEXTRA_LINK_FLAGS=-L. -DLINKED_10BIT=ON -DLINKED_12BIT=ON -DENABLE_SHARED=OFF -DSTATIC_LINK_CRT=ON -DENABLE_CLI=OFF
 sed -i 's/-lgcc_s/-lgcc_eh/g' x265.pc
 make -j $jval
+mv libx265.a libx265_main.a
+ar -M <<EOF
+CREATE libx265.a
+ADDLIB libx265_main.a
+ADDLIB libx265_main10.a
+ADDLIB libx265_main12.a
+SAVE
+END
+EOF
 make install
 
 echo "*** Building fdk-aac ***"

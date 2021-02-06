@@ -21,7 +21,7 @@ RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y bzip2 perl tar wget xz-utils autoconf automake bash build-essential cmake curl \
     frei0r-plugins-dev gawk libfontconfig1-dev libfreetype6-dev libopencore-amrnb-dev libopencore-amrwb-dev libsdl2-dev libspeex-dev libtheora-dev \
     libtool libva-dev libvdpau-dev libvo-amrwbenc-dev libvorbis-dev libwebp-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev libxvidcore-dev \
-    lsb-release pkg-config sudo tar texi2html yasm
+    lsb-release pkg-config sudo tar texi2html
 COPY ffmpeg_build.sh download.pl env.source fetchurl /build/
 # build ffmpeg
 RUN chmod +x download.pl fetchurl && bash ffmpeg_build.sh -j$(nproc) && mv ./bin/ffmpeg ./bin/ffprobe /usr/local/bin/
