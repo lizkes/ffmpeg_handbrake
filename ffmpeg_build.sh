@@ -117,7 +117,7 @@ download \
 download \
   "v2.0.2.tar.gz" \
   "fdk-aac.tar.gz" \
-  "5b85f858ee416a058574a1028a3e1b85" \
+  "b15f56aebd0b4cfe8532b24ccfd8d11e" \
   "https://github.com/mstorsjo/fdk-aac/archive"
 
 # libass dependency
@@ -136,7 +136,7 @@ download \
 download \
   "0.15.1.tar.gz" \
   "libass-0.15.1.tar.gz" \
-  "ca0eb2a28037762f1eefee532eccda50" \
+  "72414f8852cd6185d5a72bfb4ea48084" \
   "https://github.com/libass/libass/archive/"
 
 download \
@@ -154,7 +154,7 @@ download \
 download \
   "v1.10.0.tar.gz" \
   "vpx-1.10.0.tar.gz" \
-  "e5fab59896984392124d0bfaffc36e14" \
+  "cded283be38dc0078c3fbe751722efc5" \
   "https://github.com/webmproject/libvpx/archive/"
 
 download \
@@ -202,7 +202,7 @@ download \
 download \
   "v1.3.5.tar.gz" \
   "libogg-1.3.5.tar.gz" \
-  "df1a9a95251a289aa5515b869db4b15f" \
+  "52b33b31dfff09a89ad1bc07248af0bd" \
   "https://github.com/xiph/ogg/archive/"
 
 download \
@@ -214,8 +214,8 @@ download \
 download \
   "n4.4.tar.gz" \
   "ffmpeg4.4.tar.gz" \
-  "426ca412ca61634a248c787e29507206" \
-  "https://github.com/FFmpeg/FFmpeg/archive"
+  "8c52b3e3926fdbac1e7be3761035741d" \
+  "https://github.com/FFmpeg/FFmpeg/archive/"
 
 [ $download_only -eq 1 ] && exit 0
 
