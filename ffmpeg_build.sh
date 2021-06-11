@@ -115,7 +115,7 @@ download \
   "http://download.openpkg.org/components/cache/x265/"
 
 download \
-  "v2.0.1.tar.gz" \
+  "v2.0.2.tar.gz" \
   "fdk-aac.tar.gz" \
   "5b85f858ee416a058574a1028a3e1b85" \
   "https://github.com/mstorsjo/fdk-aac/archive"
@@ -134,8 +134,8 @@ download \
   "https://github.com/fribidi/fribidi/releases/download/v1.0.10/"
 
 download \
-  "0.15.0.tar.gz" \
-  "libass-0.15.0.tar.gz" \
+  "0.15.1.tar.gz" \
+  "libass-0.15.1.tar.gz" \
   "ca0eb2a28037762f1eefee532eccda50" \
   "https://github.com/libass/libass/archive/"
 
@@ -152,8 +152,8 @@ download \
   "https://github.com/xiph/opus/archive/"
 
 download \
-  "v1.9.0.tar.gz" \
-  "vpx-1.9.0.tar.gz" \
+  "v1.10.0.tar.gz" \
+  "vpx-1.10.0.tar.gz" \
   "e5fab59896984392124d0bfaffc36e14" \
   "https://github.com/webmproject/libvpx/archive/"
 
@@ -200,8 +200,8 @@ download \
   "https://github.com/xiph/vorbis/archive/"
 
 download \
-  "v1.3.4.tar.gz" \
-  "libogg-1.3.4.tar.gz" \
+  "v1.3.5.tar.gz" \
+  "libogg-1.3.5.tar.gz" \
   "df1a9a95251a289aa5515b869db4b15f" \
   "https://github.com/xiph/ogg/archive/"
 
@@ -212,8 +212,8 @@ download \
   "https://github.com/xiph/speex/archive/"
 
 download \
-  "n4.3.1.tar.gz" \
-  "ffmpeg4.3.1.tar.gz" \
+  "n4.4.tar.gz" \
+  "ffmpeg4.4.tar.gz" \
   "426ca412ca61634a248c787e29507206" \
   "https://github.com/FFmpeg/FFmpeg/archive"
 
